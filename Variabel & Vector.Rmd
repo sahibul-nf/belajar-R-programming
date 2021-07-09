@@ -1,6 +1,6 @@
 ---
 title: "Variabel & Vector"
-author: "sahibul_nf & si_syin"
+author: "henddrii4, sahibul_nf & si_syin"
 date: "7/9/2021"
 output:
   pdf_document: default
