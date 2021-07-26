@@ -1,0 +1,234 @@
+---
+title: "Fugnsi & Operator & List"
+author: "sahibul_nf"
+date: "7/26/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Resume belajar R - Variabel dan Vektor
+
+> data = c(1,6,9,4,45,63,6,1,4)
+> 
+> max(data)
+[1] 63
+> min(data)
+[1] 1
+> 
+> sqrt(5)
+[1] 2.2361
+> sqrt(data)
+[1] 1.0000 2.4495 3.0000 2.0000 6.7082 7.9373 2.4495 1.0000 2.0000
+> 
+> sort(data)
+[1]  1  1  4  4  6  6  9 45 63
+> sort(data, decreasing = true)
+Error in sort(data, decreasing = true) : object 'true' not found
+> sort(data, decreasing = TRUE)
+[1] 63 45  9  6  6  4  4  1  1
+> 
+> 
+> sort(data)
+[1]  1  1  4  4  6  6  9 45 63
+> 
+> c(100, 1200)
+[1]  100 1200
+> 
+> c(sqrt(5))
+[1] 2.2361
+> 
+> c(sqrt(2), sqrt(5))
+[1] 1.4142 2.2361
+> 
+> 
+> rep(2:9)
+[1] 2 3 4 5 6 7 8 9
+> 
+> rep(1:10, 3)
+ [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+[26]  6  7  8  9 10
+> rep(sort(data, decreasing = TRUE), 2)
+ [1] 63 45  9  6  6  4  4  1  1 63 45  9  6  6  4  4  1  1
+> 
+> rep(10:1)
+ [1] 10  9  8  7  6  5  4  3  2  1
+> 
+> rep(10:1)   # pengulangan decreasing
+ [1] 10  9  8  7  6  5  4  3  2  1
+> 
+> seq(from = 1, to = 10, by = 2)
+[1] 1 3 5 7 9
+> seq(from = 1, to = 10, by = 4)
+[1] 1 5 9
+> 
+> table(data)
+data
+ 1  4  6  9 45 63 
+ 2  2  2  1  1  1 
+> 
+> kategori_produk = c("Kosmetik", "Fashion", "Olahraga", "Fashion")
+> factor(kategori_produk)
+[1] Kosmetik Fashion  Olahraga Fashion 
+Levels: Fashion Kosmetik Olahraga
+> levels(factor(kategori_produk))
+[1] "Fashion"  "Kosmetik" "Olahraga"
+> 
+>  barplot(kategori_produk)
+Error in -0.01 * height : non-numeric argument to binary operator
+>  barplot(table(kategori_produk))
+> kategori_produk[5] = "Fashion"
+>  barplot(table(kategori_produk))
+> 
+> plot(table(kategori_produk))
+> plot(table(data))
+> 
+> 
+> i = 10
+> i < 10
+[1] FALSE
+> i == 10
+[1] TRUE
+> i >= 10
+[1] TRUE
+> 
+> 
+> (i <= 10) && (i==10)
+[1] TRUE
+> (i <= 10) || (i==10)
+[1] TRUE
+> 
+> 
+> matrix(nrow = 2, ncol = 2)
+     [,1] [,2]
+[1,]   NA   NA
+[2,]   NA   NA
+> View(z)
+> matrix(nrow = 2, ncol = 2)
+     [,1] [,2]
+[1,]   NA   NA
+[2,]   NA   NA
+> X = matrix(nrow = 2, ncol = 2)
+> 
+> X[2,2] <- 10
+> 
+> X[1,1] = 4
+> (i <= 10) || (i==10)
+[1] TRUE
+> 
+> X
+     [,1] [,2]
+[1,]    4   NA
+[2,]   NA   10
+> X[1,2] = 7
+> X
+     [,1] [,2]
+[1,]    4    7
+[2,]   NA   10
+> X[2,1] = 9
+> X
+     [,1] [,2]
+[1,]    4    7
+[2,]    9   10
+> 
+> 
+> 
+> X[2,1]
+[1] 9
+> 
+> Z = matrix(data, nrow = 2, ncol = 2)
+Warning message:
+In matrix(data, nrow = 2, ncol = 2) :
+  data length [9] is not a sub-multiple or multiple of the number of rows [2]
+> Z = matrix(data, nrow = 3, ncol = 2)
+Warning message:
+In matrix(data, nrow = 3, ncol = 2) :
+  data length [9] is not a sub-multiple or multiple of the number of columns [2]
+> data[10] = 5
+> Z = matrix(data, nrow = 2, ncol = 2)
+> Z
+     [,1] [,2]
+[1,]    1    9
+[2,]    6    4
+> 
+> Z = matrix(data, nrow = 3, ncol = 2)
+Warning message:
+In matrix(data, nrow = 3, ncol = 2) :
+  data length [10] is not a sub-multiple or multiple of the number of rows [3]
+> Z = matrix(data, nrow = 2, ncol = 3)
+Warning message:
+In matrix(data, nrow = 2, ncol = 3) :
+  data length [10] is not a sub-multiple or multiple of the number of columns [3]
+> Z = matrix(data, nrow = 3, ncol = 3)
+Warning message:
+In matrix(data, nrow = 3, ncol = 3) :
+  data length [10] is not a sub-multiple or multiple of the number of rows [3]
+> Z = matrix(data, nrow = 2, ncol = 2)
+> Z
+     [,1] [,2]
+[1,]    1    9
+[2,]    6    4
+> 
+> Z + X
+     [,1] [,2]
+[1,]    5   16
+[2,]   15   14
+> View(X)
+> 
+> rowSums(X)
+[1] 11 19
+> colSums(X)
+[1] 13 17
+> X
+     [,1] [,2]
+[1,]    4    7
+[2,]    9   10
+> rowMeans(X)
+[1] 5.5 9.5
+> 
+> 
+> 
+> dataList = list(data, kategori_produk)
+> mode(data)
+[1] "numeric"
+> mode(dataList)
+[1] "list"
+> 
+> dataList
+[[1]]
+ [1]  1  6  9  4 45 63  6  1  4  5
+
+[[2]]
+[1] "Kosmetik" "Fashion"  "Olahraga" "Fashion"  "Fashion" 
+
+> names(dataList)
+NULL
+> dataList = list(dataAngka = data, produk = kategori_produk)
+> names(dataList)
+[1] "dataAngka" "produk"   
+> 
+> length(dataList)
+[1] 2
+> 
+> dataList[2]
+$produk
+[1] "Kosmetik" "Fashion"  "Olahraga" "Fashion"  "Fashion" 
+
+> dataList$dataAngka[6]
+[1] 63
+> 
+> dataList$produk[1]
+[1] "Kosmetik"
+> 
+> dataList[-c(2)]
+$dataAngka
+ [1]  1  6  9  4 45 63  6  1  4  5
+
+> dataList = dataList[-c(2)]
+> length(dataList)
+[1] 1
+> dataList[3]
+$<NA>
+NULL

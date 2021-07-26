@@ -3,8 +3,8 @@ title: "Variabel & Vector"
 author: "henddrii4, sahibul_nf & si_syin"
 date: "7/9/2021"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -87,4 +87,6 @@ Error: object 'Z' not found
 > data1 <- data1[c(1,2,3)]
 > data1 <- data1[]
 > data1 <- data1[-c(1,2,3)]
+
+> rm(list = ls())       # hapus semua object di environment
 ```
