@@ -9,7 +9,9 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Resume belajar R - Variabel dan Vektor
+## Resume belajar R - Fungsi & Operator & List
+
+```R
 
 > data = c(1,6,9,4,45,63,6,1,4)
 > 
@@ -48,16 +50,16 @@ Error in sort(data, decreasing = true) : object 'true' not found
 [1] 2 3 4 5 6 7 8 9
 > 
 > rep(1:10, 3)
- [1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
+[1]  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5  6  7  8  9 10  1  2  3  4  5
 [26]  6  7  8  9 10
 > rep(sort(data, decreasing = TRUE), 2)
- [1] 63 45  9  6  6  4  4  1  1 63 45  9  6  6  4  4  1  1
+[1] 63 45  9  6  6  4  4  1  1 63 45  9  6  6  4  4  1  1
 > 
 > rep(10:1)
- [1] 10  9  8  7  6  5  4  3  2  1
+[1] 10  9  8  7  6  5  4  3  2  1
 > 
 > rep(10:1)   # pengulangan decreasing
- [1] 10  9  8  7  6  5  4  3  2  1
+[1] 10  9  8  7  6  5  4  3  2  1
 > 
 > seq(from = 1, to = 10, by = 2)
 [1] 1 3 5 7 9
@@ -66,8 +68,8 @@ Error in sort(data, decreasing = true) : object 'true' not found
 > 
 > table(data)
 data
- 1  4  6  9 45 63 
- 2  2  2  1  1  1 
+1  4  6  9 45 63 
+2  2  2  1  1  1 
 > 
 > kategori_produk = c("Kosmetik", "Fashion", "Olahraga", "Fashion")
 > factor(kategori_produk)
@@ -232,3 +234,5 @@ $dataAngka
 > dataList[3]
 $<NA>
 NULL
+
+```
